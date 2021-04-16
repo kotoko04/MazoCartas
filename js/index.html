@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cartas</title>
+</head>
+
+<body>
+<section>
+    <h1>Lista de Cartas</h1>
+	<table id="tabla">
+		<tr>
+			<td>Numero</td>
+			<td>Carta</td>
+			<td>Cantidad</td>
+        </tr>
+	</table>
+</section>
+
+<section><button  id="boton">Agregar</button></section>
+
+<section>
+	<form>
+
+        <label class="numero" for="numero">Numero</label>
+        <input type="text" name="numero" id="numero" maxlength="50" placeholder="Numero carta">
+    </br></br>
+        <label class="carta" for="carta">Carta</label>
+        <input type="text" name="carta" id="carta" maxlength="50" placeholder="Carta Agregar">
+    </br></br>
+        <input type="submit" name="submit" value="Guardar">
+    </form>
+</section>
+
+<script type="text/javascript">
+
+function cargarTabla (){
+
+	const tabla = document.getElementById("tabla");
+ 	const tr = document.createElement('tr');
+
+     for (i=0; i<input.length; i++) {
+
+        const tdNumero= document.createElement('td');
+            tdNumero.textContent = input[i].addEventListener;
+            tr.appendChild(tdNumero);
+
+            const tdCarta = document.createElement('td');
+            tdCarta.textContent =input[i].addEventListener;
+            tr.appendChild(tdCarta);
+            
+            tabla.appendChild(tr);
+    }
+    
+}
+
+
+function obtenerdatos(){
+    var url = "http://demo6497253.mockable.io/cartas";
+
+	fetch  (url)
+	    .then(response => response.json())
+		.then(data => generarTabla(data))
+	.catch(error => {});
+}
+
+</script>
